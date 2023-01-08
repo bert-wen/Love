@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>我的小可爱</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="./css/index.css" />
+        <link rel="stylesheet" href="./css/mus.css" />
+        <script type="text/javascript" src="/js/mus.js"></script>
+        <script language="javascript" type="text/javascript">
+            var flag = true;
+            var index = 0;
+            var num_song = 6;
+            var audios = document.getElementsByClassName("audios");
+            function ismusic() {
+                if (flag) {
+                    audios[index%num_song].play();
+                    flag = false;
+                } else {
+                    audios[index%num_song].pause();
+                    flag = true;
+                }
+            }
+            function tonext() {
+                audios[index%num_song].load();
+                audios[index%num_song].pause();
+                index++;
+                audios[index%num_song].play();
+            }
+        </script>
+    </head>
+    <body>
+        <div class="btn">
+            <button style="width: 80px;height: 30px;" onclick="location.href='iindex.html'">小可爱</button>
+            <button style="width: 80px;height: 30px;" onclick="location.href='loveTree.html'">点击有惊喜</button>
+            <button style="width: 60px;height: 30px;" onclick="ismusic()">播放</button>
+            <button style="width: 60px;height: 30px;" onclick="tonext()">下一首</button>
+        </div>
+        <div class="box">
+            <div class="small-box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="middle-box">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <audio class="audios" hidden="true" controls="controls" onended="tonext">
+            <source src="./music/陈小春-独家记忆.mp3" />
+        </audio>
+        <audio class="audios" hidden="true" controls="controls" onended="tonext">
+            <source src="./music/棉子-勇气.mp3" />
+        </audio>
+        <audio class="audios" hidden="true" controls="controls" onended="tonext">
+            <source src="./music/程响-四季予你.mp3" />
+        </audio>
+        <audio class="audios" hidden="true" controls="controls" onended="tonext">
+            <source src="./music/甜甜的 .mp3" />
+        </audio>
+        <audio class="audios" hidden="true" controls="controls" onended="tonext">
+            <source src="./music/圈住你.mp3" />
+        </audio>
+        <audio class="audios" hidden="true" controls="controls" onended="tonext">
+            <source src="./music/白月光與硃砂痣.mp3" />
+        </audio>
+    </body>
+</html>
