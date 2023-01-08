@@ -29,7 +29,7 @@ function writeContent(init){
 	}
 
 	if(charIndex<=stringLength){
-		setTimeout('writeContent(false)',140);
+		setTimeout('writeContent(false)',100);
 	}else{
 		blinkSpan();
 	}  
