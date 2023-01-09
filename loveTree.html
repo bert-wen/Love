@@ -192,13 +192,12 @@
         }));
 
         var textAnimate = eval(Jscex.compile("async", function () {
-            var together = new Date(2020, 12, 14);
+            var together = new Date('2020-12-14 00:00:00');
             // together.setFullYear(2020, 12, 14);
             // together.setHours();
             // together.setMinutes(0);
             // together.setSeconds(0);
             // together.setMilliseconds(0);
-
             $("#code").show().typewriter();
             $("#clock-box").fadeIn(500);
             while (true) {
